@@ -59,7 +59,7 @@ const ProjectDetail: React.FC = () => {
     <div
       style={{
         minHeight: '100vh',
-        paddingTop: 'max(7rem, env(safe-area-inset-top, 0px) + 7rem)',
+        paddingTop: 'clamp(7.5rem, 14vw, 13.5rem)',
         paddingBottom: '6rem',
         position: 'relative',
         overflow: 'hidden',
@@ -81,7 +81,7 @@ const ProjectDetail: React.FC = () => {
       <div className="container-site" style={{ maxWidth: '84rem' }}>
 
         {/* ── Back to work link ───────────────────────────────── */}
-        <div style={{ marginBottom: '2.5rem' }}>
+        <div style={{ marginBottom: '2.5rem', paddingTop: '0.5rem' }}>
           <Link
             to="/"
             style={{
@@ -91,24 +91,24 @@ const ProjectDetail: React.FC = () => {
               fontSize: '0.875rem',
               fontWeight: 600,
               color: '#F3F1EA',
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              padding: '0.5rem 1.15rem',
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid rgba(255, 255, 255, 0.14)',
+              padding: '0.625rem 1.25rem',
               borderRadius: '9999px',
               textDecoration: 'none',
               transition: 'all 220ms ease',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = '#C8FF3D';
-              e.currentTarget.style.borderColor = 'rgba(200, 255, 61, 0.4)';
-              e.currentTarget.style.background = 'rgba(200, 255, 61, 0.08)';
+              e.currentTarget.style.borderColor = 'rgba(200, 255, 61, 0.5)';
+              e.currentTarget.style.background = 'rgba(200, 255, 61, 0.1)';
               e.currentTarget.style.transform = 'translateX(-3px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.color = '#F3F1EA';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.14)';
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
               e.currentTarget.style.transform = 'translateX(0)';
             }}
           >

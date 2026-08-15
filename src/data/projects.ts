@@ -18,8 +18,8 @@ const projects: Project[] = [
     name: 'DevGear',
     tagline: 'The developer affiliate platform built for growth.',
     description:
-      'Developer-focused affiliate platform designed to help creators and communities discover useful technology products. Built with a focus on clean UX and fast performance.',
-    technologies: ['React', 'Vite', 'Tailwind CSS'],
+      'Developer-focused ecosystem and gear curation platform designed to help creators discover useful hardware & software. Engineered with instant search, category filtering, and high-contrast dark UX.',
+    technologies: ['TypeScript', 'React', 'Tailwind CSS', 'Vite'],
     slug: 'devgear',
     featured: true,
     accentColor: '#A855F7', // DevGear purple
@@ -29,10 +29,10 @@ const projects: Project[] = [
     id: 'soon',
     number: '02',
     name: 'SOON — Somali Optical Networks',
-    tagline: 'Building the Future of Connectivity in Somalia.',
+    tagline: 'Next-Gen Telecommunications & AI Platform for Somalia.',
     description:
-      'A technology concept focused on improving connectivity and communication infrastructure across Somalia. Explores modern network design principles through a product lens.',
-    technologies: ['React', 'Firebase', 'AI'],
+      'Full-stack telecommunications web application featuring interactive fiber coverage maps, modern service onboarding, and Google Genkit AI for intelligent customer troubleshooting and package routing.',
+    technologies: ['Next.js 15', 'TypeScript', 'Genkit AI', 'Firebase'],
     slug: 'soon',
     featured: true,
     accentColor: '#06B6D4', // SOON cyan/teal
@@ -42,10 +42,10 @@ const projects: Project[] = [
     id: 'finvest-one',
     number: '03',
     name: 'Finvest-One',
-    tagline: 'Modern financial dashboard built around clarity.',
+    tagline: 'Modern financial telemetry built around clarity.',
     description:
-      'Modern financial dashboard interface designed around clarity, data visualization, and usability. Focused on making financial information accessible and actionable.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+      'Precision financial dashboard interface designed around high-density telemetry, multi-asset portfolio tracking, and interactive canvas charts for zero-lag data visualization.',
+    technologies: ['TypeScript', 'React', 'Tailwind CSS'],
     slug: 'finvest-one',
     featured: true,
     accentColor: '#C8FF3D', // Finvest lime
