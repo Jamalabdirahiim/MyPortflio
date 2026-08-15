@@ -303,33 +303,38 @@ const About: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     background: '#111315',
+                    gap: '0.75rem',
+                    flexWrap: 'wrap',
                   }}
                 >
-                  {/* Traffic lights */}
+                  {/* Traffic lights + Name */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    {['#FF5F56', '#FFBD2E', '#27C93F'].map((c) => (
-                      <div
-                        key={c}
-                        style={{
-                          width: '10px',
-                          height: '10px',
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.8,
-                        }}
-                      />
-                    ))}
+                    {/* Traffic lights (hidden on narrow screens to save space) */}
+                    <div className="hidden sm:flex" style={{ gap: '0.5rem', alignItems: 'center', display: 'flex' }}>
+                      {['#FF5F56', '#FFBD2E', '#27C93F'].map((c) => (
+                        <div
+                          key={c}
+                          style={{
+                            width: '10px',
+                            height: '10px',
+                            borderRadius: '50%',
+                            background: c,
+                            opacity: 0.8,
+                          }}
+                        />
+                      ))}
+                    </div>
                     <span
                       style={{
-                        marginLeft: '0.75rem',
-                        fontSize: '0.6875rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.14em',
+                        marginLeft: '0.25rem',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
                         color: '#9A9A94',
                         textTransform: 'uppercase',
                       }}
                     >
-                      ahmed.abdihakim
+                      ahmed abdihakim
                     </span>
                   </div>
 
@@ -339,10 +344,11 @@ const About: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.375rem',
-                      padding: '0.25rem 0.625rem',
+                      padding: '0.35rem 0.75rem',
                       background: 'rgba(200, 255, 61, 0.08)',
                       border: '1px solid rgba(200, 255, 61, 0.2)',
                       borderRadius: '9999px',
+                      flexShrink: 0,
                     }}
                   >
                     <span
@@ -358,8 +364,8 @@ const About: React.FC = () => {
                       style={{
                         fontSize: '0.625rem',
                         color: '#C8FF3D',
-                        fontWeight: 600,
-                        letterSpacing: '0.1em',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
                         textTransform: 'uppercase',
                       }}
                     >

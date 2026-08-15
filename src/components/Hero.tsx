@@ -103,7 +103,7 @@ const Hero: React.FC = () => {
       onMouseLeave={handleMouseLeave}
       style={{
         minHeight: isMobile ? 'auto' : '100svh',
-        paddingTop: isMobile ? '6rem' : '10rem',
+        paddingTop: isMobile ? '9.5rem' : '10rem',
         paddingBottom: isMobile ? '3rem' : '3rem',
         position: 'relative',
         overflow: 'hidden',
