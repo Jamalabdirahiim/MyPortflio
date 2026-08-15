@@ -7,7 +7,6 @@ import Engineering from './components/Engineering';
 import TechStack from './components/TechStack';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import ProjectDetail from './pages/ProjectDetail';
 import CustomCursor from './components/CustomCursor';
 
@@ -42,7 +41,6 @@ const App: React.FC = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/project/:slug" element={<ProjectDetail />} />
     </Routes>
-    <Footer />
   </>
 );
 

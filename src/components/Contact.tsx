@@ -351,47 +351,135 @@ const Contact: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* ── Bottom: footer strip ── */}
+          {/* ── Unified Bottom Footer ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
             style={{
               marginTop: '4rem',
-              paddingTop: '2rem',
+              paddingTop: '2.5rem',
               borderTop: '1px solid #1E2124',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              gap: '1rem',
+              gap: '1.25rem',
+              position: 'relative',
+              zIndex: 1,
             }}
           >
+            {/* Name & Year */}
             <span
               style={{
-                fontSize: '0.75rem',
-                color: '#6B6B64',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                fontWeight: 600,
+                fontSize: '0.8125rem',
+                color: '#9A9A94',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
               }}
             >
-              Somalia · 2026
+              Ahmed Abdihakim © 2026
+            </span>
+
+            {/* Role */}
+            <span
+              style={{
+                fontSize: '0.625rem',
+                fontWeight: 700,
+                letterSpacing: '0.18em',
+                color: '#4a4d50',
+                textTransform: 'uppercase',
+              }}
+            >
+              Frontend Engineer · Somalia
+            </span>
+
+            {/* Social Icons */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                style={{
+                  color: '#4a4d50',
+                  transition: 'color 200ms ease, transform 200ms ease',
+                  display: 'flex',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#C8FF3D'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#4a4d50'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <GithubIcon size={16} />
+              </a>
+              <a
+                href={`mailto:${personal.email}`}
+                aria-label="Email"
+                style={{
+                  color: '#4a4d50',
+                  transition: 'color 200ms ease, transform 200ms ease',
+                  display: 'flex',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#C8FF3D'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#4a4d50'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <Mail size={16} strokeWidth={1.75} />
+              </a>
+            </div>
+
+            {/* Built with */}
+            <span
+              style={{
+                fontSize: '0.625rem',
+                color: '#3A3A36',
+                fontWeight: 400,
+                letterSpacing: '0.06em',
+                marginTop: '0.5rem',
+                paddingBottom: '1rem',
+              }}
+            >
+              Built with React + TypeScript
             </span>
           </motion.div>
 
         </div>
       </div>
 
-      {/* ── Soft premium bottom glow/light emanating upward ── */}
+      {/* ── Multi-directional Ambient Glow Lights ── */}
+      {/* Center — primary lime glow */}
       <div
         style={{
           position: 'absolute',
-          bottom: 0,
+          bottom: '-40px',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '80vw',
-          height: '320px',
-          background: 'radial-gradient(ellipse at bottom, rgba(200, 255, 61, 0.09) 0%, rgba(200, 255, 61, 0.02) 60%, transparent 100%)',
+          width: '90vw',
+          height: '420px',
+          background: 'radial-gradient(ellipse at 50% 100%, rgba(200, 255, 61, 0.14) 0%, rgba(200, 255, 61, 0.04) 45%, transparent 80%)',
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      />
+      {/* Left — teal accent glow */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-20px',
+          left: '-5%',
+          width: '45vw',
+          height: '350px',
+          background: 'radial-gradient(ellipse at 30% 100%, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)',
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      />
+      {/* Right — purple accent glow */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-20px',
+          right: '-5%',
+          width: '45vw',
+          height: '350px',
+          background: 'radial-gradient(ellipse at 70% 100%, rgba(168, 85, 247, 0.07) 0%, rgba(168, 85, 247, 0.02) 50%, transparent 80%)',
           pointerEvents: 'none',
           zIndex: 0,
         }}

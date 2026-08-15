@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
   };
 
   const logoH = isMobile
-    ? scrolled ? '60px' : '68px'
+    ? scrolled ? '72px' : '82px'
     : scrolled ? '110px' : '130px';
 
   return (
