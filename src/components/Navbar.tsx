@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
   };
 
   const logoH = isMobile
-    ? scrolled ? '60px' : '68px'
+    ? scrolled ? '72px' : '82px'
     : scrolled ? '110px' : '130px';
 
   return (
@@ -387,7 +387,7 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 position: 'fixed',
-                top: '5rem',
+                top: '5.75rem',
                 left: '0.75rem',
                 right: '0.75rem',
                 background: 'rgba(12, 14, 16, 0.98)',
