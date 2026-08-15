@@ -351,7 +351,7 @@ const Contact: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* ── Bottom: email strip ── */}
+          {/* ── Bottom: footer strip ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -362,32 +362,17 @@ const Contact: React.FC = () => {
               borderTop: '1px solid #1E2124',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
+              justifyContent: 'center',
               gap: '1rem',
             }}
           >
-            <a
-              href={`mailto:${personal.email}`}
-              style={{
-                fontSize: 'clamp(0.875rem, 1.8vw, 1.125rem)',
-                fontWeight: 500,
-                color: '#6B6B64',
-                textDecoration: 'none',
-                letterSpacing: '0.01em',
-                transition: 'color 200ms ease',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#C8FF3D'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = '#6B6B64'; }}
-            >
-              {personal.email}
-            </a>
             <span
               style={{
                 fontSize: '0.75rem',
-                color: '#4A4A44',
-                letterSpacing: '0.1em',
+                color: '#6B6B64',
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
+                fontWeight: 600,
               }}
             >
               Somalia · 2026
@@ -396,6 +381,21 @@ const Contact: React.FC = () => {
 
         </div>
       </div>
+
+      {/* ── Soft premium bottom glow/light emanating upward ── */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '80vw',
+          height: '320px',
+          background: 'radial-gradient(ellipse at bottom, rgba(200, 255, 61, 0.09) 0%, rgba(200, 255, 61, 0.02) 60%, transparent 100%)',
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      />
     </section>
   );
 };
