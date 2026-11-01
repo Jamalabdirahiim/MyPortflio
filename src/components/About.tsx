@@ -197,9 +197,9 @@ const About: React.FC = () => {
             <div
               style={{
                 position: 'relative',
-                width: '100px',
-                height: '100px',
-                marginBottom: '1.25rem',
+                width: '124px',
+                height: '124px',
+                marginBottom: '1.35rem',
               }}
             >
               {/* Outer soft ambient halo */}
@@ -243,14 +243,14 @@ const About: React.FC = () => {
                 <span
                   style={{
                     position: 'absolute',
-                    bottom: '4px',
-                    right: '4px',
-                    width: '14px',
-                    height: '14px',
+                    bottom: '6px',
+                    right: '6px',
+                    width: '16px',
+                    height: '16px',
                     borderRadius: '50%',
                     background: '#22C55E',
-                    border: '2.5px solid #0D0F10',
-                    boxShadow: '0 0 8px #22C55E',
+                    border: '3px solid #0D0F10',
+                    boxShadow: '0 0 10px #22C55E',
                   }}
                 />
               </div>
