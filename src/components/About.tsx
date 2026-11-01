@@ -195,6 +195,71 @@ const About: React.FC = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
+                {/* Tiny circular profile avatar */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '1.25rem' }}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      padding: '2px',
+                      background: 'linear-gradient(135deg, #C8FF3D 0%, rgba(200, 255, 61, 0.25) 100%)',
+                      boxShadow: '0 0 16px rgba(200, 255, 61, 0.25)',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <img
+                      src="/ahmed-profile.jpg"
+                      alt="Ahmed Abdihakim"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                        objectPosition: 'center 20%',
+                        display: 'block',
+                      }}
+                    />
+                    <span
+                      style={{
+                        position: 'absolute',
+                        bottom: '0px',
+                        right: '0px',
+                        width: '9px',
+                        height: '9px',
+                        borderRadius: '50%',
+                        background: '#22C55E',
+                        border: '1.5px solid #0D0F10',
+                        boxShadow: '0 0 6px #22C55E',
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: '0.6875rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.12em',
+                        color: '#C8FF3D',
+                        textTransform: 'uppercase',
+                        display: 'block',
+                      }}
+                    >
+                      Engineering Profile
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '0.8125rem',
+                        color: '#9A9A94',
+                        fontWeight: 500,
+                      }}
+                    >
+                      Ahmed Abdihakim
+                    </span>
+                  </div>
+                </div>
+
                 {/* Headline with accent underline */}
                 <div style={{ position: 'relative', display: 'inline-block', marginBottom: '2rem' }}>
                   <h2
@@ -324,9 +389,31 @@ const About: React.FC = () => {
                         />
                       ))}
                     </div>
+                    <div
+                      style={{
+                        width: '24px',
+                        height: '24px',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        border: '1.5px solid #C8FF3D',
+                        flexShrink: 0,
+                        marginLeft: '0.25rem',
+                      }}
+                    >
+                      <img
+                        src="/ahmed-profile.jpg"
+                        alt="Ahmed Abdihakim"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center 20%',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
                     <span
                       style={{
-                        marginLeft: '0.25rem',
                         fontSize: '0.75rem',
                         fontWeight: 700,
                         letterSpacing: '0.1em',
