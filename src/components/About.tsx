@@ -1,42 +1,43 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import SectionLabel from './SectionLabel';
-import { Code2, Layers, Globe, Zap } from 'lucide-react';
+import { Code2, Layers, Globe, Zap, Terminal, CheckCircle2 } from 'lucide-react';
 
 /* ── Data ─────────────────────────────────────────────────── */
 const traits = [
   {
     icon: Code2,
     label: 'Currently Learning',
-    value: 'Advanced frontend architecture.',
+    value: 'Advanced systems architecture & React Compiler patterns.',
     accent: '#C8FF3D',
   },
   {
     icon: Layers,
     label: 'Currently Building',
-    value: 'Better interfaces.',
+    value: 'Resilient web applications with sub-second responsiveness.',
     accent: '#C8FF3D',
   },
   {
     icon: Globe,
-    label: 'Currently Looking For',
-    value: 'A team where I can learn, contribute, and grow.',
+    label: 'Career Focus',
+    value: 'High-growth engineering teams building impactful products.',
     accent: '#C8FF3D',
   },
   {
     icon: Zap,
-    label: 'Core Belief',
-    value: 'Every pixel should have a purpose.',
+    label: 'Core Philosophy',
+    value: 'Every pixel, token, and interaction must serve a purpose.',
     accent: '#C8FF3D',
   },
 ];
 
 const profileRows = [
-  ['University', 'SIMAD University'],
-  ['Program', 'Information Technology'],
-  ['Graduation', '2026'],
-  ['Focus', 'Frontend Engineering'],
-  ['Location', 'Somalia'],
+  ['Institution', 'SIMAD University'],
+  ['Degree', 'B.Sc. Information Technology'],
+  ['Graduation', 'Class of 2026'],
+  ['Specialization', 'Frontend Architecture & UI Systems'],
+  ['Core Arsenal', 'React 19 · Next.js · TypeScript · Tailwind'],
+  ['Location', 'Somalia · Available Globally'],
 ];
 
 /* ── Trait card ───────────────────────────────────────────── */
@@ -61,13 +62,13 @@ const TraitCard: React.FC<{
         padding: '1.25rem 1.5rem',
         background: hovered
           ? 'rgba(200, 255, 61, 0.05)'
-          : 'rgba(17, 19, 21, 0.6)',
+          : 'rgba(17, 19, 21, 0.65)',
         border: hovered
           ? '1px solid rgba(200, 255, 61, 0.35)'
-          : '1px solid rgba(39, 42, 44, 0.9)',
+          : '1px solid rgba(39, 42, 44, 0.85)',
         borderRadius: '10px',
         backdropFilter: 'blur(12px)',
-        transition: 'all 300ms cubic-bezier(0.16, 1, 0.3, 1)',
+        transition: 'all 280ms cubic-bezier(0.16, 1, 0.3, 1)',
         cursor: 'default',
         overflow: 'hidden',
       }}
@@ -101,15 +102,15 @@ const TraitCard: React.FC<{
             : 'rgba(255, 255, 255, 0.04)',
           border: '1px solid rgba(200, 255, 61, 0.2)',
           marginBottom: '0.875rem',
-          transition: 'all 300ms ease',
+          transition: 'all 280ms ease',
         }}
       >
         <Icon
           size={16}
           style={{
             color: '#C8FF3D',
-            opacity: hovered ? 1 : 0.7,
-            transition: 'opacity 300ms ease',
+            opacity: hovered ? 1 : 0.8,
+            transition: 'opacity 280ms ease',
           }}
         />
       </div>
@@ -118,7 +119,7 @@ const TraitCard: React.FC<{
         style={{
           fontSize: '0.625rem',
           fontWeight: 600,
-          letterSpacing: '0.16em',
+          letterSpacing: '0.14em',
           textTransform: 'uppercase',
           color: '#9A9A94',
           marginBottom: '0.375rem',
@@ -128,11 +129,11 @@ const TraitCard: React.FC<{
       </div>
       <div
         style={{
-          fontSize: '0.875rem',
+          fontSize: '0.84375rem',
           color: hovered ? '#F3F1EA' : '#D1D1C7',
           fontWeight: 500,
-          lineHeight: 1.45,
-          transition: 'color 300ms ease',
+          lineHeight: 1.5,
+          transition: 'color 280ms ease',
         }}
       >
         {value}
@@ -157,12 +158,13 @@ const About: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: '30%',
-          left: '-10%',
-          width: '500px',
-          height: '500px',
+          top: '20%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '600px',
+          height: '400px',
           background:
-            'radial-gradient(ellipse at center, rgba(200,255,61,0.04) 0%, transparent 70%)',
+            'radial-gradient(ellipse at center, rgba(200,255,61,0.05) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -178,129 +180,216 @@ const About: React.FC = () => {
             <SectionLabel number="05" label="About" />
           </motion.div>
 
-          {/* Two-column layout */}
+          {/* ── Centered Profile Header ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+              marginBottom: '4rem',
+            }}
+          >
+            {/* Centered Circular Portrait */}
+            <div
+              style={{
+                position: 'relative',
+                width: '100px',
+                height: '100px',
+                marginBottom: '1.25rem',
+              }}
+            >
+              {/* Outer soft ambient halo */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '-6px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(200, 255, 61, 0.4) 0%, transparent 70%)',
+                  filter: 'blur(10px)',
+                  zIndex: 0,
+                }}
+              />
+              {/* Glowing ring container */}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  padding: '3px',
+                  background: 'linear-gradient(135deg, #C8FF3D 0%, rgba(200, 255, 61, 0.3) 55%, rgba(255, 255, 255, 0.15) 100%)',
+                  boxShadow: '0 12px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(200, 255, 61, 0.25)',
+                  zIndex: 1,
+                }}
+              >
+                <img
+                  src="/ahmed-profile.jpg"
+                  alt="Ahmed Abdihakim"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 22%',
+                    display: 'block',
+                    background: '#0D0F10',
+                  }}
+                />
+                {/* Active online status badge */}
+                <span
+                  style={{
+                    position: 'absolute',
+                    bottom: '4px',
+                    right: '4px',
+                    width: '14px',
+                    height: '14px',
+                    borderRadius: '50%',
+                    background: '#22C55E',
+                    border: '2.5px solid #0D0F10',
+                    boxShadow: '0 0 8px #22C55E',
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Name & Title Pill */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.625rem',
+                marginBottom: '0.875rem',
+                padding: '4px 14px',
+                background: 'rgba(17, 19, 21, 0.75)',
+                border: '1px solid rgba(200, 255, 61, 0.25)',
+                borderRadius: '9999px',
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <span
+                style={{
+                  fontSize: '0.875rem',
+                  fontWeight: 700,
+                  color: '#F3F1EA',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                Ahmed Abdihakim
+              </span>
+              <span
+                style={{
+                  width: '4px',
+                  height: '4px',
+                  borderRadius: '50%',
+                  background: '#C8FF3D',
+                  opacity: 0.6,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '0.6875rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: '#C8FF3D',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Frontend Engineer
+              </span>
+            </div>
+
+            {/* Section Headline */}
+            <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1rem' }}>
+              <h2
+                style={{
+                  margin: 0,
+                  fontSize: 'clamp(2rem, 4.5vw, 3rem)',
+                  fontWeight: 900,
+                  letterSpacing: '-0.03em',
+                  textTransform: 'uppercase',
+                  color: '#F3F1EA',
+                  lineHeight: 1.1,
+                }}
+              >
+                A LITTLE <span style={{ color: '#C8FF3D' }}>ABOUT ME</span>
+              </h2>
+              {/* Accent decorative bar */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={inView ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                style={{
+                  position: 'absolute',
+                  bottom: '-8px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '64px',
+                  height: '2.5px',
+                  background: '#C8FF3D',
+                  borderRadius: '2px',
+                }}
+              />
+            </div>
+
+            {/* Subtitle statement */}
+            <p
+              style={{
+                margin: 0,
+                fontSize: 'clamp(0.9375rem, 1.8vw, 1.0625rem)',
+                color: '#9A9A94',
+                maxWidth: '42rem',
+                lineHeight: 1.65,
+                marginTop: '0.75rem',
+              }}
+            >
+              Bridging engineering rigor with interaction craft to build responsive, accessible, and high-performance digital software.
+            </p>
+          </motion.div>
+
+          {/* ── Two-column Details Grid ── */}
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr',
-              gap: '4rem',
+              gap: '3.5rem',
               alignItems: 'start',
             }}
-            className="lg:grid-cols-[1fr_1fr]"
+            className="lg:grid-cols-[1.1fr_0.9fr]"
           >
             {/* ── LEFT: Story + trait grid ─────────────────── */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               >
-                {/* Tiny circular profile avatar */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '1.25rem' }}>
-                  <div
-                    style={{
-                      position: 'relative',
-                      width: '44px',
-                      height: '44px',
-                      borderRadius: '50%',
-                      padding: '2px',
-                      background: 'linear-gradient(135deg, #C8FF3D 0%, rgba(200, 255, 61, 0.25) 100%)',
-                      boxShadow: '0 0 16px rgba(200, 255, 61, 0.25)',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <img
-                      src="/ahmed-profile.jpg"
-                      alt="Ahmed Abdihakim"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                        objectPosition: 'center 20%',
-                        display: 'block',
-                      }}
-                    />
-                    <span
-                      style={{
-                        position: 'absolute',
-                        bottom: '0px',
-                        right: '0px',
-                        width: '9px',
-                        height: '9px',
-                        borderRadius: '50%',
-                        background: '#22C55E',
-                        border: '1.5px solid #0D0F10',
-                        boxShadow: '0 0 6px #22C55E',
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <span
-                      style={{
-                        fontSize: '0.6875rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.12em',
-                        color: '#C8FF3D',
-                        textTransform: 'uppercase',
-                        display: 'block',
-                      }}
-                    >
-                      Engineering Profile
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '0.8125rem',
-                        color: '#9A9A94',
-                        fontWeight: 500,
-                      }}
-                    >
-                      Ahmed Abdihakim
-                    </span>
-                  </div>
+                <div
+                  style={{
+                    fontSize: '0.6875rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#C8FF3D',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <Terminal size={14} />
+                  Background & Engineering Focus
                 </div>
 
-                {/* Headline with accent underline */}
-                <div style={{ position: 'relative', display: 'inline-block', marginBottom: '2rem' }}>
-                  <h2
-                    style={{
-                      margin: 0,
-                      fontSize: 'clamp(1.65rem, 3.5vw, 2.25rem)',
-                      fontWeight: 800,
-                      letterSpacing: '-0.025em',
-                      textTransform: 'uppercase',
-                      color: '#F3F1EA',
-                      lineHeight: 1.1,
-                    }}
-                  >
-                    A LITTLE
-                    <br />
-                    <span style={{ color: '#C8FF3D' }}>ABOUT ME</span>
-                  </h2>
-                  {/* Decorative line */}
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={inView ? { scaleX: 1 } : {}}
-                    transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    style={{
-                      position: 'absolute',
-                      bottom: '-8px',
-                      left: 0,
-                      width: '48px',
-                      height: '2px',
-                      background: '#C8FF3D',
-                      transformOrigin: 'left',
-                      borderRadius: '2px',
-                    }}
-                  />
-                </div>
-
-                {/* Body text */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+                {/* Professional Body text */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
-                    "I'm a graduating Information Technology Engineer from SIMAD University with a deep passion for frontend development and modern interfaces.",
-                    "Through academic projects, personal work, and real-world challenges, I've developed the mindset and skills to build digital products that are both functional and meaningful.",
-                    "I'm now transitioning into professional engineering and ready to contribute, learn, and grow with a talented team.",
+                    "Graduating Information Technology Engineer from SIMAD University with a focused specialization in modern frontend architectures, component design systems, and client-side performance.",
+                    "Through end-to-end projects like SOON (telecom & AI platform), DevGear (developer marketplace), and Finvest (financial telemetry), I have developed the discipline to engineer software that balances deep technical resilience with fluid UX.",
+                    "I am actively pursuing frontend engineering roles where I can collaborate with forward-thinking teams, solve complex interface challenges, and ship production code at scale.",
                   ].map((text, i) => (
                     <motion.p
                       key={i}
@@ -309,8 +398,8 @@ const About: React.FC = () => {
                       transition={{ duration: 0.5, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                       style={{
                         margin: 0,
-                        fontSize: '0.9375rem',
-                        color: '#9A9A94',
+                        fontSize: '0.9625rem',
+                        color: '#B5B5AD',
                         lineHeight: 1.75,
                       }}
                     >
@@ -324,7 +413,7 @@ const About: React.FC = () => {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                   gap: '0.875rem',
                   marginTop: '2.5rem',
                 }}
@@ -342,13 +431,12 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* ── RIGHT: Profile card ───────────────────────── */}
+            {/* ── RIGHT: Profile terminal dossier ───────────── */}
             <motion.div
-              initial={{ opacity: 0, x: 32 }}
+              initial={{ opacity: 0, x: 28 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* Profile terminal card */}
               <div
                 style={{
                   background: '#0D0F11',
@@ -372,10 +460,9 @@ const About: React.FC = () => {
                     flexWrap: 'wrap',
                   }}
                 >
-                  {/* Traffic lights + Name */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    {/* Traffic lights (hidden on narrow screens to save space) */}
-                    <div className="hidden sm:flex" style={{ gap: '0.5rem', alignItems: 'center', display: 'flex' }}>
+                  {/* Traffic lights + Title */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+                    <div style={{ gap: '0.45rem', alignItems: 'center', display: 'flex' }}>
                       {['#FF5F56', '#FFBD2E', '#27C93F'].map((c) => (
                         <div
                           key={c}
@@ -384,36 +471,14 @@ const About: React.FC = () => {
                             height: '10px',
                             borderRadius: '50%',
                             background: c,
-                            opacity: 0.8,
+                            opacity: 0.85,
                           }}
                         />
                       ))}
                     </div>
-                    <div
-                      style={{
-                        width: '24px',
-                        height: '24px',
-                        borderRadius: '50%',
-                        overflow: 'hidden',
-                        border: '1.5px solid #C8FF3D',
-                        flexShrink: 0,
-                        marginLeft: '0.25rem',
-                      }}
-                    >
-                      <img
-                        src="/ahmed-profile.jpg"
-                        alt="Ahmed Abdihakim"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'center 20%',
-                          display: 'block',
-                        }}
-                      />
-                    </div>
                     <span
                       style={{
+                        marginLeft: '0.25rem',
                         fontSize: '0.75rem',
                         fontWeight: 700,
                         letterSpacing: '0.1em',
@@ -421,7 +486,7 @@ const About: React.FC = () => {
                         textTransform: 'uppercase',
                       }}
                     >
-                      ahmed abdihakim
+                      ahmed abdihakim // dossier
                     </span>
                   </div>
 
@@ -461,7 +526,7 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Info rows with stagger */}
+                {/* Profile rows */}
                 <div>
                   {profileRows.map(([label, value], i) => (
                     <motion.div
@@ -488,7 +553,7 @@ const About: React.FC = () => {
                         style={{
                           fontSize: '0.75rem',
                           color: '#6B6B64',
-                          fontWeight: 400,
+                          fontWeight: 500,
                           letterSpacing: '0.02em',
                         }}
                       >
@@ -496,10 +561,11 @@ const About: React.FC = () => {
                       </span>
                       <span
                         style={{
-                          fontSize: '0.875rem',
+                          fontSize: '0.84375rem',
                           color: '#F3F1EA',
                           fontWeight: 600,
                           letterSpacing: '-0.01em',
+                          textAlign: 'right',
                         }}
                       >
                         {value}
@@ -508,13 +574,13 @@ const About: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Bottom manifesto */}
+                {/* Bottom manifesto banner */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={inView ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.85 }}
                   style={{
-                    padding: '1.25rem 1.5rem',
+                    padding: '1.35rem 1.5rem',
                     background: 'rgba(200,255,61,0.03)',
                     borderTop: '1px solid rgba(200,255,61,0.08)',
                   }}
@@ -527,22 +593,24 @@ const About: React.FC = () => {
                       color: '#C8FF3D',
                       textTransform: 'uppercase',
                       marginBottom: '0.5rem',
-                      opacity: 0.7,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.375rem',
                     }}
                   >
-                    // summary
+                    <CheckCircle2 size={13} />
+                    Career Commitment
                   </div>
                   <p
                     style={{
                       margin: 0,
-                      fontSize: '0.8125rem',
+                      fontSize: '0.84375rem',
                       color: '#9A9A94',
-                      lineHeight: 1.6,
+                      lineHeight: 1.65,
                       fontStyle: 'italic',
                     }}
                   >
-                    "Early in my career — but unusually prepared and motivated to
-                    grow inside a professional engineering environment."
+                    "Prepared, motivated, and equipped with the engineering foundation to design and ship production software that delivers tangible real-world value."
                   </p>
                 </motion.div>
               </div>
