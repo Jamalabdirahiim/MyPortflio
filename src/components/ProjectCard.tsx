@@ -8,9 +8,11 @@ import { type Project } from '../data/projects';
 const imageMap: Record<string, string> = {
   devgear: '/projects/devgear-hero.png',
   soon: '/projects/soon-hero.png',
+  finvest: '/projects/finvest-hero.png',
+  'finvest-one': '/projects/finvest-hero.png',
 };
 
-/* ── Finvest mock visual (no real screenshot) ───────────────── */
+/* ── Finvest mock visual (fallback if image fails to load) ────── */
 const FinvestVisual: React.FC = () => (
   <div
     style={{
@@ -26,8 +28,8 @@ const FinvestVisual: React.FC = () => (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
       <div>
         <div style={{ fontSize: '7px', color: '#4a4d50', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Financial Overview</div>
-        <div style={{ fontSize: '14px', fontWeight: 700, color: '#F3F1EA' }}>$24,780.50</div>
-        <div style={{ fontSize: '7px', color: '#C8FF3D', fontWeight: 600 }}>↑ +2.4% this month</div>
+        <div style={{ fontSize: '14px', fontWeight: 700, color: '#F3F1EA' }}>$69,880.00</div>
+        <div style={{ fontSize: '7px', color: '#C8FF3D', fontWeight: 600 }}>↑ +2.5% this month</div>
       </div>
       <div style={{ display: 'flex', gap: '3px' }}>
         {['1D', '1W', '1M', 'ALL'].map((t, i) => (
@@ -49,7 +51,7 @@ const FinvestVisual: React.FC = () => (
         <path d="M0 30 L10 28 L20 32 L30 20 L40 22 L50 15 L60 18 L70 10 L80 12 L90 6 L100 8" fill="none" stroke="#C8FF3D" strokeWidth="1.2" />
       </svg>
     </div>
-    {[['Investments', '+$1,240', '#C8FF3D'], ['Expenses', '-$380', '#9A9A94'], ['Savings', '+$960', '#C8FF3D']].map(([label, val, color]) => (
+    {[['Bitcoin', '$42,350', '#C8FF3D'], ['Ethereum', '$2,210.5', '#9A9A94'], ['USDT Swap', '$1,000', '#C8FF3D']].map(([label, val, color]) => (
       <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #1e2124' }}>
         <span style={{ fontSize: '7px', color: '#9A9A94' }}>{label}</span>
         <span style={{ fontSize: '7px', fontWeight: 600, color }}>{val}</span>
@@ -70,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
 
-  const imageSrc = imageMap[project.id];
+  const imageSrc = imageMap[project.id] || imageMap[project.slug];
   const accent = project.accentColor;
 
   return (

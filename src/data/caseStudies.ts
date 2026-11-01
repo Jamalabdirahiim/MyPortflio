@@ -21,6 +21,58 @@ export interface CaseStudyData {
   sections: CaseStudySection[];
 }
 
+const finvestData: CaseStudyData = {
+  id: 'finvest',
+  githubUrl: 'https://github.com/Jamalabdirahiim/Finvest',
+  liveUrl: 'https://finvest.ahmddev.tech',
+  role: 'Frontend Engineer & UI Specialist',
+  timeline: '2025 – 2026',
+  coreLanguages: ['TypeScript', 'React 19', 'Tailwind CSS', 'Recharts', 'Vite', 'Lucide React'],
+  architectureOverview:
+    'Component-driven cryptocurrency dashboard and instant swap telemetry interface built around absolute cognitive clarity. Engineered with fluid vector tracking charts, responsive currency swap estimation, and a high-contrast dark dashboard layout.',
+  highlights: [
+    { label: 'Build Tool', value: 'Vite (HMR <50ms)' },
+    { label: 'UI Architecture', value: 'Atomic Components' },
+    { label: 'Charting', value: 'Recharts & Vector SVG' },
+    { label: 'Tech Stack', value: 'React 19 + Tailwind' },
+  ],
+  sections: [
+    {
+      heading: '01. Purpose & Overview',
+      subheading: 'Eliminating cognitive load in modern personal crypto & finance',
+      body: [
+        'Finvest addresses the visual noise and clutter typical of modern financial tracking systems by providing a minimalist, high-density dashboard.',
+        'Key user flows include instant total net-worth telemetry ($69,880 +2.5%), one-click deposit and withdrawal flows, real-time crypto price tracking (Bitcoin, Ethereum), and a frictionless cryptocurrency swap module.',
+      ],
+    },
+    {
+      heading: '02. Engineering & Data Presentation',
+      subheading: 'Precision vector sparklines and responsive state tracking',
+      body: [
+        'The application features smooth SVG vector charts and Recharts sparklines for portfolio history tracking, integrated with duration filters (1D, 1W, 1M, ALL) that update without layout shift.',
+        'The interactive Sell Crypto swap module lets users input an amount (e.g. 1000 USDT) and receive instant live conversion estimates (0.45 ETH) with a clean swap button and clear minimum limits.',
+      ],
+      techCallout: {
+        title: 'Core Development Stack',
+        items: [
+          'React functional components utilizing modular state hooks for responsive swap estimates',
+          'Tailwind CSS layout system with customized border radius and color utility tokens',
+          'TypeScript interfaces mapping type contracts for financial assets and swap parameters',
+          'Vite bundler providing lightning-fast hot module replacement and optimized production bundle output',
+        ],
+      },
+    },
+    {
+      heading: '03. Interface Craft & Aesthetic Direction',
+      subheading: 'Balancing obsidian depths with vivid indicator cues',
+      body: [
+        'Engineered with soft off-white card surfaces on dark obsidian backdrops, paired with electric lime and royal violet accents.',
+        'Glanceable metric pills and vector path trends ensure that complex market movements are communicated effortlessly to the user at a glance.',
+      ],
+    },
+  ],
+};
+
 export const caseStudies: Record<string, CaseStudyData> = {
   devgear: {
     id: 'devgear',
@@ -143,35 +195,6 @@ export const caseStudies: Record<string, CaseStudyData> = {
     ],
   },
 
-  'finvest-one': {
-    id: 'finvest-one',
-    role: 'Frontend Engineer & UI Specialist',
-    timeline: '2025 – 2026',
-    coreLanguages: ['TypeScript', 'React', 'Tailwind CSS', 'SVG Canvas', 'Lucide React'],
-    architectureOverview:
-      'High-clarity financial dashboard engineered for multi-asset portfolio tracking, real-time balance calculations, and frictionless investment telemetry.',
-    highlights: [
-      { label: 'Focus', value: 'Financial Data Viz' },
-      { label: 'Languages', value: 'TypeScript + React' },
-      { label: 'Design', value: 'Precision Dark Mode' },
-      { label: 'Performance', value: 'Zero Lag Canvas' },
-    ],
-    sections: [
-      {
-        heading: '01. Purpose & Overview',
-        subheading: 'Eliminating cognitive load in modern personal finance',
-        body: [
-          'Finvest-One addresses the clutter of traditional financial apps by prioritizing clean typographic hierarchy, instantaneous net-worth calculations, and glanceable asset allocations.',
-        ],
-      },
-      {
-        heading: '02. Engineering & Data Presentation',
-        subheading: 'Lightweight vector charts and responsive data grid',
-        body: [
-          'Built with responsive SVG charts, animated trend paths, and modular metric summary cards that allow users to inspect investment breakdowns by time horizon (1D, 1W, 1M, ALL).',
-          'Styled with high-contrast obsidian surfaces and Electric Lime highlights to ensure maximum numerical legibility.',
-        ],
-      },
-    ],
-  },
+  finvest: finvestData,
+  'finvest-one': finvestData,
 };

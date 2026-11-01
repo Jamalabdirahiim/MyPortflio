@@ -39,16 +39,17 @@ const projects: Project[] = [
     liveUrl: 'https://soon.byahmed.dev',
   },
   {
-    id: 'finvest-one',
+    id: 'finvest',
     number: '03',
-    name: 'Finvest-One',
-    tagline: 'Modern financial telemetry built around clarity.',
+    name: 'Finvest',
+    tagline: 'Modern personal crypto & banking interface built for real-time portfolio telemetry.',
     description:
-      'Precision financial dashboard interface designed around high-density telemetry, multi-asset portfolio tracking, and interactive canvas charts for zero-lag data visualization.',
-    technologies: ['TypeScript', 'React', 'Tailwind CSS'],
-    slug: 'finvest-one',
+      'High-clarity cryptocurrency dashboard and financial telemetry interface built with React and Tailwind CSS. Features dynamic multi-asset tracking, live balance calculations, vector trendlines, and instant crypto swapping.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Recharts', 'Vite'],
+    slug: 'finvest',
     featured: true,
     accentColor: '#C8FF3D', // Finvest lime
+    liveUrl: 'https://finvest.ahmddev.tech',
   },
 ];
 

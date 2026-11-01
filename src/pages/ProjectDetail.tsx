@@ -301,7 +301,7 @@ const ProjectDetail: React.FC = () => {
           )}
 
           {/* Hero Project Screenshot */}
-          {(project.id === 'soon' || project.id === 'devgear') && (
+          {Boolean(project) && (
             <div
               style={{
                 width: '100%',
@@ -314,7 +314,7 @@ const ProjectDetail: React.FC = () => {
               }}
             >
               <img
-                src={project.id === 'soon' ? '/projects/soon-hero.png' : '/projects/devgear-hero.png'}
+                src={project.id === 'soon' ? '/projects/soon-hero.png' : project.id === 'devgear' ? '/projects/devgear-hero.png' : '/projects/finvest-hero.png'}
                 alt={`${project.name} preview`}
                 style={{
                   width: '100%',
